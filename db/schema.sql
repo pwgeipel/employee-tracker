@@ -23,6 +23,6 @@ CREATE TABLE employees (
     salary DEC(10,1),
     department_id INT NOT NULL,
     manager VARCHAR(30) NOT NULL,
-    FOREIGN KEY (department_ID) REFERENCES departments(id),
+    FOREIGN KEY (department_id) REFERENCES departments(id),
     -- FOREIGN KEY (salary) REFERENCES departments(id)
 );
