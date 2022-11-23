@@ -6,7 +6,7 @@ USE employeeTracker_db;
 CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     job_title VARCHAR(30) NOT NULL,
-    department_id INT,
+    department_name VARCHAR(30),
     salary DEC(10, 1),
 );
 
