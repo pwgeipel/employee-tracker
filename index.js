@@ -15,6 +15,8 @@ const viewRoles = async ()=> {
         'SELECT * FROM roles'
     )
     console.table(results)
+
+    menuPrompt()
 }
 
 const viewDepartments = async ()=> {
@@ -22,6 +24,8 @@ const viewDepartments = async ()=> {
         'SELECT * FROM departments'
     )
     console.table(results)
+
+    menuPrompt()
 }
 
 const viewEmployees = async ()=> {
@@ -29,6 +33,8 @@ const viewEmployees = async ()=> {
         'SELECT * FROM employees'
     )
     console.table(results)
+
+    menuPrompt()
 }
 
 const addEmployee = async () => {
