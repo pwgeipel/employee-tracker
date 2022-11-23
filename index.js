@@ -1,7 +1,7 @@
 import mysql from "mysql2"
 import inquirer from "inquirer"
 
-// const cTable = require("console.table");
+import "console.table";
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 
 const viewRoles = async ()=> {
     const [results] = await connection.promise().query(
-        'SELECT * FROM roles'
+        'SELECT * FROM role'
     )
     console.table(results)
 
@@ -21,7 +21,7 @@ const viewRoles = async ()=> {
 
 const viewDepartments = async ()=> {
     const [results] = await connection.promise().query(
-        'SELECT * FROM departments'
+        'SELECT * FROM department'
     )
     console.table(results)
 
@@ -30,7 +30,7 @@ const viewDepartments = async ()=> {
 
 const viewEmployees = async ()=> {
     const [results] = await connection.promise().query(
-        'SELECT * FROM employees'
+        'SELECT * FROM employee'
     )
     console.table(results)
 
@@ -51,21 +51,21 @@ const addEmployee = async () => {
         },
         {
             type: 'input',
-            name: 'job_title',
+            name: 'role_id',
             message: 'What is their job title?'
         },
         {
             type: 'input',
-            name: 'manager',
+            name: 'manager_id',
             message: 'Who is their manager?'
         }
     ])
 
     try {
-        const [results] = await connection.promise().query(
-            `INSERT INTO employees (first_name, last_name, job_title, manager)
+        const [answers] = await connection.promise().query(
+            `INSERT INTO employee (first_name, last_name, role_id, manager_id)
             VALUES (?,?,?,?)`,
-            [answers.first_name, answers.last_name, answers.job_title, answers.manager]
+            [answers.first_name, answers.last_name, answers.role_id, answers.manager_id]
         )
         console.log('Employee Added!')
 
