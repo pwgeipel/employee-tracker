@@ -50,9 +50,10 @@ const addEmployee = async () => {
             message: 'What is their last name?'
         },
         {
-            type: 'input',
-            name: 'role_id',
-            message: 'What is their job title?'
+            type: 'list',
+            name: 'action',
+            message: 'Please select from the following job roles:',
+            choices: ['SELECT job_title FROM role']
         },
         {
             type: 'input',
