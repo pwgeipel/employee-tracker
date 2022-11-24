@@ -3,10 +3,12 @@ import inquirer from "inquirer"
 
 import "console.table";
 
+require('dotenv').config()
+
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'rootpwg1981',
+    password: process.env.DB_PASSWORD,
     database: 'employeeTracker_db'
 })
 
