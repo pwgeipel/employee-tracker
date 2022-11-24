@@ -3,7 +3,7 @@ import inquirer from "inquirer"
 
 import "console.table";
 
-require('dotenv').config()
+
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -51,17 +51,17 @@ const addEmployee = async () => {
             name: 'last_name',
             message: 'What is their last name?'
         },
-        {
-            type: 'list',
-            name: 'action',
-            message: 'Please select from the following job roles:',
-            choices: ['SELECT job_title FROM role']
-        },
-        {
-            type: 'input',
-            name: 'manager_id',
-            message: 'Who is their manager?'
-        }
+        // {
+        //     type: 'list',
+        //     name: 'action',
+        //     message: 'Please select from the following job roles:',
+        //     choices: ['SELECT job_title FROM role']
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'manager_id',
+        //     message: 'Who is their manager?'
+        // }
     ])
 
     try {
@@ -78,13 +78,6 @@ const addEmployee = async () => {
     }
 }
 
-// function viewDepartments() {
-//     const [results] = "SELECT * FROM department"
-//     connection.query(answer, function(err, res) {
-//         console.table(res);
-//         menuPrompt();
-//     })
-//    }
 
 const menuPrompt = async () => {
     const answers = await inquirer.prompt([
