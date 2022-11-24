@@ -8,7 +8,7 @@ import "console.table";
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: process.env.DB_PASSWORD,
+    password: 'rootpwg1981',
     database: 'employeeTracker_db'
 })
 
@@ -51,17 +51,17 @@ const addEmployee = async () => {
             name: 'last_name',
             message: 'What is their last name?'
         },
-        // {
-        //     type: 'list',
-        //     name: 'action',
-        //     message: 'Please select from the following job roles:',
-        //     choices: ['SELECT job_title FROM role']
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'manager_id',
-        //     message: 'Who is their manager?'
-        // }
+        {
+            type: 'list',
+            name: 'action',
+            message: 'Please select from the following job roles:',
+            choices: ['SELECT job_title FROM role']
+        },
+        {
+            type: 'input',
+            name: 'manager_id',
+            message: 'Who is their manager?'
+        }
     ])
 
     try {
